@@ -108,20 +108,35 @@ func sigma(input string) string {
 func Convert(input string) (string, error) {
 	output := make([]string, len(input))
 
-	//for ii := 0; ii < len(input); ii++ {
+        // Ignore html escape
+        offUntil := ""
+
         for ii, runeValue := range input {
+                if offUntil != "" {
+                        if offUntil == string(runeValue) {
+                                offUntil = ""
+                        }
+                        output[ii] = string(runeValue)
+                        continue
+                }
+                if string(runeValue) == "&" {
+                        offUntil = ";"
+                        output[ii] = string(runeValue)
+                        continue
+                }
+
                 bytes := []byte(string(runeValue))
                 if len(bytes) > 1 {
                         output[ii] = string(runeValue)
                         continue
                 }
-		if val, ok := greekUnicode[rune(input[ii])]; ok {
+		if val, ok := greekUnicode[runeValue]; ok {
 			output[ii] = string(val)
 		} else {
-			if val, ok := markUnicodeInt[rune(input[ii])]; ok {
+			if val, ok := markUnicodeInt[runeValue]; ok {
 				output[ii] += unicodeIToS(val)
 			} else {
-				output[ii] = string(input[ii])
+				output[ii] = string(runeValue)
 			}
 		}
 	}

@@ -17,6 +17,7 @@ var TestStrings = [][2]string{
 	[2]string{"*t*w=|", "Τῼ͂"},
 	[2]string{"ss", "σς"},
 	[2]string{"ss ss", "σς σς"},
+        [2]string{"abg&left;alpha", "αβγ&left;αλπηα"},
         [2]string{"kai\\ †o(\\ e)pe/pato au)=† tis h(/kista *ku=ron", 
                   "καὶ †ὃ ἐπέπατο αὖ† τις ἥκιστα Κῦρον"},
 }
