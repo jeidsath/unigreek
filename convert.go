@@ -106,20 +106,13 @@ func sigma(input string) string {
 }
 
 func Convert(input string) (string, error) {
-	// We can assume that the string only holds 1-byte charaters
 	output := make([]string, len(input))
-        offUntil := ""
-	for ii := 0; ii < len(input); ii++ {
-                if offUntil != "" {
-                        if offUntil == string(input[ii]) {
-                                offUntil = ""
-                        }
-                        output[ii] = string(input[ii])
-                        continue
-                }
-                if string(input[ii]) == "&" {
-                        offUntil = ";"
-                        output[ii] = string(input[ii])
+
+	//for ii := 0; ii < len(input); ii++ {
+        for ii, runeValue := range input {
+                bytes := []byte(string(runeValue))
+                if len(bytes) > 1 {
+                        output[ii] = string(runeValue)
                         continue
                 }
 		if val, ok := greekUnicode[rune(input[ii])]; ok {
