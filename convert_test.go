@@ -17,6 +17,7 @@ var TestStrings = [][2]string{
 	[2]string{"*t*w=|", "Τῼ͂"},
 	[2]string{"ss", "σς"},
 	[2]string{"ss ss", "σς σς"},
+	[2]string{"abg&left;alpha", "αβγ&left;αλπηα"},
 }
 
 func TestConvert(t *testing.T) {
