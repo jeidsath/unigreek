@@ -38,6 +38,7 @@ var greekUnicode = map[rune]rune{
 	'x': 'χ',
 	'y': 'ψ',
 	'w': 'ω',
+        ':': '·',
 }
 
 var markUnicodeInt = map[rune]int{
