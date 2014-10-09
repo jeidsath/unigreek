@@ -21,7 +21,7 @@ var TestStrings = [][2]string{
         [2]string{"kai\\ †o(\\ e)pe/pato au)=† tis h(/kista *ku=ron", 
                   "καὶ †ὃ ἐπέπατο αὖ† τις ἥκιστα Κῦρον"},
         [2]string{"ei) de\\ su/ g' e)s po/lemon pwlh/seai, h)= te/ s' o)i/+w", 
-                  "εἰ δὲ σύ γ' ἐς πόλεμον πωλήσεαι, ἦ τέ σ' ὀί̈ω"},
+                  "εἰ δὲ σύ γ’ ἐς πόλεμον πωλήσεαι, ἦ τέ σ’ ὀί̈ω"},
 }
 
 func TestConvert(t *testing.T) {

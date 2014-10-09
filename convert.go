@@ -39,6 +39,7 @@ var greekUnicode = map[rune]rune{
 	'y': 'ψ',
 	'w': 'ω',
         ':': '·',
+        '\'': '’',
 }
 
 var markUnicodeInt = map[rune]int{
@@ -87,7 +88,7 @@ func sigma(input string) string {
 	sigma := false
 	for _, runeValue := range input {
 		if sigma {
-			if runeValue >= 945 && runeValue <= 969 {
+			if (runeValue >= 945 && runeValue <= 969) || runeValue == '’' {
 				result += "σ"
 			} else {
 				result += "ς"
